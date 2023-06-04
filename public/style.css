@@ -1,0 +1,10 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23,24,23,1);
+  overflow: hidden;
+}
+#myCanvas {
+  margin: auto;
+}

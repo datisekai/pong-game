@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div id="action" class="flex items-center gap-2 p-4">
+        <button class="btn btn-primary" id="create-room">Create Room</button>
+        <div class="divider text-white">OR</div>
+        <div class="flex items-center gap-1">
+          <input
+            type="text"
+            placeholder="Type roomId"
+            id="input-room"
+            class="input input-bordered w-full max-w-sm text-black"
+          />
+          <button class="btn btn-secondary" id="join-room">Join Room</button>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4">
+        <div class="relative">
+          <canvas id="myCanvas" width="800" height="600"></canvas>
+          <div id="guide" class="flex justify-center items-center text-white absolute inset-0 bg-[rgba(0,0,0,0.8)] ">
+              <span class="text-white text-3xl font-bold">Pong Game</span>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="player-guide">
+            <div>
+              <h1 class="text-white mt-1 font-bold">Guide</h1>
+              <div class="mt-1 flex justify-center gap-2">
+                <kbd class="kbd">W</kbd>
+                <kbd class="kbd">S</kbd>
+              </div>
+              <div class="divider before:bg-white text-white after:bg-white">OR</div>
+              <div class="mt-1 flex justify-center gap-2">
+                <kbd class="kbd">▲</kbd>
+                <kbd class="kbd">▼</kbd>
+              </div>
+            </div>
+            
+          </div>
+          <div class="space-y-1">
+            <p class="text-white">Click to Play</p>
+            <button class="btn btn-primary" id="btn-play">Play</button>
+          </div>
+          <div class="space-y-1">
+            <p class="text-white">Reset point</p>
+            <button class="btn btn-secondary" id="btn-reset-point">Reset</button>
+          </div>
+          <div id="user-room">
+            <h1 class="text-white font-bold text-xl">
+              User Room <span id="count-user-room">(0)</span>
+            </h1>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div
+            class="divider divider-white text-white before:bg-white after:bg-white"
+          >
+            AND
+          </div>
+          <div id="user-online">
+            <h1 class="text-white font-bold text-xl">
+              User Online <span id="count-user-online">(0)</span>
+            </h1>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="javascripts/ball.js"></script>
+    <script src="javascripts/player.js"></script>
+    <script src="javascripts/script.js"></script>
+  </body>
+</html>
